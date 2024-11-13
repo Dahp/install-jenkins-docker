@@ -19,7 +19,9 @@ services:
     command: --storage-driver overlay2
 
   my-jenkins:
-    image: my-jenkins
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: my-jenkins
     restart: on-failure
     environment:
